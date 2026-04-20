@@ -248,7 +248,7 @@ class UserModel {
   static async create(deviceId, ITatformData = {}) {
     const now = new Date();
     const userId = Math.floor(Math.random() * 10000);
-    const username = `StumbleCNeo#${userId}`;
+    const username = `StumbleNeo#${userId}`;
 
     const user = {
       id: userId,
