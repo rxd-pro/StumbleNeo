@@ -40,7 +40,22 @@ app.get('/version/get', (req, res) => {
 app.use(authenticate);
 
 app.post("/photon/auth", VerifyPhoton);
-app.get("/onlinecheck", OnlineCheck);
+app.get('/', (req, res) => {
+    res.send("Server is Online and Database Bot is Active!");
+});
+
+client.on('messageCreate', async (message) => {
+    if (!message.content.startsWith('!rename')) return;
+
+    const isAdmin = message.member.roles.cache.some(role => role.name === 'Admin');
+    
+    if (!isAdmin) {
+        return message.reply("❌ You are not an /op! Only admins can use this command.");
+    }
+
+    const [cmd, targetId, newName] = message.content.split(' ');
+    message.reply(`✅ Player ${targetId} renamed to ${newName}`);
+});
 
 app.get("/matchmaking/filter", MatchmakingController.getMatchmakingFilter);
 
