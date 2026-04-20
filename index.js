@@ -1,4 +1,37 @@
 const { Client, GatewayIntentBits } = require('discord.js');
+const mongoose = require('mongoose');
+
+// This initializes the bot so Render doesn't crash
+const client = new Client({ 
+    intents: [
+        GatewayIntentBits.Guilds, 
+        GatewayIntentBits.GuildMessages, 
+        GatewayIntentBits.MessageContent
+    ] 
+});
+
+// Connects your bot to the database
+mongoose.connect(process.env.mongoUri);
+
+client.on('ready', () => {
+    console.log(`✅ Bot is logged in as ${client.user.tag}`);
+});
+
+// Admin Rename Command
+client.on('messageCreate', async (message) => {
+    if (!message.content.startsWith('!rename')) return;
+    
+    // Check for "Admin" role
+    if (!message.member.roles.cache.some(r => r.name === 'Admin')) {
+        return message.reply("❌ You are not an /op!");
+    }
+
+    const [cmd, id, name] = message.content.split(' ');
+    message.reply(`✅ Admin confirmed. Changing ${id} to ${name}...`);
+});
+
+client.login(process.env.DISCORD_TOKEN);
+const { Client, GatewayIntentBits } = require('discord.js');
 const client = new Client({ 
     intents: [
         GatewayIntentBits.Guilds, 
