@@ -59,7 +59,7 @@ const BackendUtils = {
 class Database {
   constructor() {
     this.mongoUri = process.env.mongoUri;
-    this.dbName = 'StumbleCrowns';
+    this.dbName = 'StumbleNeo';
     this.client = null;
     this.db = null;
     this.collections = {
