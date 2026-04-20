@@ -1,3 +1,11 @@
+const { Client, GatewayIntentBits } = require('discord.js');
+const client = new Client({ 
+    intents: [
+        GatewayIntentBits.Guilds, 
+        GatewayIntentBits.GuildMessages, 
+        GatewayIntentBits.MessageContent
+    ] 
+});
 require("dotenv").config();
 const express = require("express");
 const Console = require("./ConsoleUtils");
@@ -193,3 +201,4 @@ app.listen(PORT, () => {
   );
   Console.log("Server", `Listening on port ${PORT}`);
 });
+client.login(process.env.DISCORD_TOKEN);
