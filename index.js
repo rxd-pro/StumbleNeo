@@ -29,7 +29,7 @@ const {
 
 const app = express();
 const Title = "StumbleNeo";
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 10000;
 
 app.use(express.json());
 app.get('/version/get', (req, res) => {
