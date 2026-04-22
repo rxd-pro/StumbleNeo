@@ -28,7 +28,7 @@ const {
 } = require("./BackendUtils");
 
 const app = express();
-const Title = "StumbleCrowns";
+const Title = "StumbleNeo";
 const PORT = process.env.PORT || 8080;
 
 app.use(express.json());
