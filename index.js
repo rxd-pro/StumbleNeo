@@ -40,7 +40,7 @@ app.get('/version/get', (req, res) => {
 app.use(authenticate);
 
 app.post("/photon/auth", VerifyPhoton);
-app.get("/onlinecheck", OnlineCheck);
+app.get("/onlinecheck", (req, res) => res.status(200).send("OK"));
 
 app.get("/matchmaking/filter", MatchmakingController.getMatchmakingFilter);
 
