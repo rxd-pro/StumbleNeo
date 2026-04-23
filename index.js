@@ -49,7 +49,7 @@ app.post('/user/login', UserController.login);
 app.get('/usersettings', UserController.getSettings);
 app.post('/user/updateusername', UserController.updateUsername);
 app.get('/user/deleteaccount', UserController.deleteAccount);
-app.post('/user/linkplatform', UserController.linkPlatform);
+//app.post('/user/linkplatform', UserController.linkPlatform);
 app.post('/user/unlinkplatform', UserController.unlinkPlatform);
 app.get("/shared/:version/:type", sendShared);
 //app.post('/user/profile', UserController.getProfile);
