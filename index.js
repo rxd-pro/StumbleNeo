@@ -45,14 +45,14 @@ app.get("/onlinecheck", (req, res) => res.status(200).send("OK"));
 //app.get("/matchmaking/filter", MatchmakingController.getMatchmakingFilter);
 
 app.post('/user/login', UserController.login);
-app.get('/user/config', sendShared);
+//app.get('/user/config', sendShared);
 app.get('/usersettings', UserController.getSettings);
 app.post('/user/updateusername', UserController.updateUsername);
 app.get('/user/deleteaccount', UserController.deleteAccount);
 app.post('/user/linkplatform', UserController.linkPlatform);
 app.post('/user/unlinkplatform', UserController.unlinkPlatform);
 app.get("/shared/:version/:type", sendShared);
-app.post('/user/profile', UserController.getProfile);
+//app.post('/user/profile', UserController.getProfile);
 app.post('/user-equipped-cosmetics/update', UserController.updateCosmetics);
 app.post('/user/cosmetics/addskin', UserController.addSkin);
 app.post('/user/cosmetics/setequipped', UserController.setEquippedCosmetic);
