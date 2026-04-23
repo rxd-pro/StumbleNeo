@@ -51,7 +51,7 @@ app.post('/user/updateusername', UserController.updateUsername);
 app.get('/user/deleteaccount', UserController.deleteAccount);
 //app.post('/user/linkplatform', UserController.linkPlatform);
 //app.post('/user/unlinkplatform', UserController.unlinkPlatform);
-app.get("/shared/:version/:type", sendShared);
+//app.get("/shared/:version/:type", sendShared);
 //app.post('/user/profile', UserController.getProfile);
 app.post('/user-equipped-cosmetics/update', UserController.updateCosmetics);
 app.post('/user/cosmetics/addskin', UserController.addSkin);
