@@ -42,7 +42,7 @@ app.use(authenticate);
 app.post("/photon/auth", VerifyPhoton);
 app.get("/onlinecheck", (req, res) => res.status(200).send("OK"));
 
-app.get("/matchmaking/filter", MatchmakingController.getMatchmakingFilter);
+//app.get("/matchmaking/filter", MatchmakingController.getMatchmakingFilter);
 
 app.post('/user/login', UserController.login);
 app.get('/user/config', sendShared);
