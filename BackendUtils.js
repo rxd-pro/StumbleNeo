@@ -59,7 +59,7 @@ const BackendUtils = {
 class Database {
   constructor() {
     this.mongoUri = process.env.mongoUri;
-    this.dbName = 'StumbleNeo';
+    this.dbName = 'StumbleCore';
     this.client = null;
     this.db = null;
     this.collections = {
@@ -248,7 +248,7 @@ class UserModel {
   static async create(deviceId, ITatformData = {}) {
     const now = new Date();
     const userId = Math.floor(Math.random() * 10000);
-    const username = `StumbleNeo#${userId}`;
+    const username = `Core#${userId}`;
 
     const user = {
       id: userId,
